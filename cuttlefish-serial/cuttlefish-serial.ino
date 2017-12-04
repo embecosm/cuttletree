@@ -1,4 +1,4 @@
-// Christmas Tree serial connected seahorse lights
+// Christmas Tree serial connected cuttlefish lights
 
 // Copyright (C) 2016, 2017 Embecosm Limited <www.embecosm.com>
 
@@ -28,27 +28,32 @@
 
 // Vector describing all lights clockwise from the belly
 
+// Vector describing all lights clockwise from the highest numbered pin
+
 static struct led_info leds [] =
-  { { 13, X, LOW,  HIGH },
-    { 12, G, HIGH, LOW  },
-    { 10, R, LOW , HIGH },
-    {  9, G, HIGH, LOW  },
-    { 11, R, LOW , HIGH },
-    {  7, G, HIGH, LOW  },
-    {  8, R, LOW , HIGH },
-    {  6, G, HIGH, LOW  },
-    {  5, R, LOW , HIGH },
-    {  3, R, LOW , HIGH },
-    { 16, G, HIGH, LOW  },
-    { 18, R, LOW , HIGH },
-    { 17, G, HIGH, LOW  } };
+  { { 18, G, HIGH, LOW  },
+    { 16, R, HIGH, LOW  },
+    { 14, G, HIGH, LOW  },
+    { 13, R, LOW , HIGH },
+    { 11, G, LOW,  HIGH },
+    {  9, R, LOW , HIGH },
+    {  8, G, HIGH, LOW  },
+    {  6, R, HIGH, LOW  },
+    {  4, G, LOW,  HIGH },
+    {  2, R, LOW , HIGH } };
 
 // Vector of pins to hold HIGH
 
-static int high_leds [] = {};
+static int high_leds [] =
+  {
+    12, 10, 3
+  };
 
 // Vector of pins to hold LOW
 
-static int low_leds [] = {};
+static int low_leds [] =
+  {
+    17, 15, 7, 5
+  };
 
 #include "../common/cuttletree.ino"

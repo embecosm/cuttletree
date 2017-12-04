@@ -18,3 +18,8 @@ The main loop frequently tests the serial Rx port (digital pin 0). If it is
 low, then a serial input is coming, and the Arduino reads a single character
 to determine what to do. Any 7-bit printable character can be used (ASCII 0x20
 thru 0x7e).
+
+Directory `common` has code common to both cuttlefish and seahorse
+implementations, directories `cuttlefish-serial` and `seahorse-serial` have
+the specific code, which is little more than a specification of the LED pin
+sequence and which pins need driving to fixed value.

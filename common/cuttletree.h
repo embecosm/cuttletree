@@ -1,4 +1,4 @@
-// Christmas Tree serial connected seahorse lights
+// Common header for christmas Tree serial connected seahorse lights
 
 // Copyright (C) 2016, 2017 Embecosm Limited <www.embecosm.com>
 
@@ -21,34 +21,34 @@
 // with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 
-// Flash a seahorse in a pattern according to anything received on the serial
-// port.
+// Header common to Cuttletree applications
 
-#include "../common/cuttletree.h"
+#ifndef CUTTLETREE_H
+#define CUTTLETREE_H
 
-// Vector describing all lights clockwise from the belly
+// Enum for colors
 
-static struct led_info leds [] =
-  { { 13, X, LOW,  HIGH },
-    { 12, G, HIGH, LOW  },
-    { 10, R, LOW , HIGH },
-    {  9, G, HIGH, LOW  },
-    { 11, R, LOW , HIGH },
-    {  7, G, HIGH, LOW  },
-    {  8, R, LOW , HIGH },
-    {  6, G, HIGH, LOW  },
-    {  5, R, LOW , HIGH },
-    {  3, R, LOW , HIGH },
-    { 16, G, HIGH, LOW  },
-    { 18, R, LOW , HIGH },
-    { 17, G, HIGH, LOW  } };
+enum led_color {
+  R,
+  G,
+  X
+};
 
-// Vector of pins to hold HIGH
+// Structure for describing LEDs.
 
-static int high_leds [] = {};
+struct led_info
+{
+  int             pin;
+  enum led_color  color;
+  int             on;		// HIGH or LOW
+  int             off;		// HIGH or LOW
+};
 
-// Vector of pins to hold LOW
+// Structure describing pattern functions
 
-static int low_leds [] = {};
+struct pat_info {
+  void (*func) (int);
+  int  arg;
+};
 
-#include "../common/cuttletree.ino"
+#endif	// CUTTLETREE_H

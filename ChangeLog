@@ -1,3 +1,13 @@
+2017-12-04  Jeremy Bennett  <jeremy.bennett@embecosm.com>
+
+	* README.md: Add mode detail on Arduino code structure.
+	* common/cuttletree.h: Created.
+	* common/cuttletree.ino: Created.
+	* cuttlefish-serial/Makefile: Created.
+	* cuttlefish-serial/cuttlefish-serial.ino: Created.
+	* seahorse-serial/seahorse-serial.ino: Rewritten to use common
+	code shared with cuttlefish-serial.
+
 2017-12-02  Jeremy Bennett  <jeremy.bennett@embecosm.com>
 
 	* .gitignore: Created.
